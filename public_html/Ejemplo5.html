@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Ejercicio #5</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- development version, includes helpful console warnings -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>        
+        <link href="css/main.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="vue-app">
+            <p>Nombre: {{ name }}.</p>
+            <p>Horario: {{ horario }}.</p>
+            <p>Tipo de negocio: {{ tipoNegocio2("Prueba") }}.</p>
+            <p><a v-bind:href="urlSitioWeb">Enlace</a></p><!-- Enlace al inicio -->
+            <p>
+                Ventas: {{ ventas }}. 
+                <button v-on:click.once="incrementar(1)">Incrementar en 1</button>
+                <button v-on:click="decrementar(1)">Decrementar en 1</button>
+                <button v-on:dblclick="incrementar(10)">Incrementar en 10</button>
+                <button v-on:dblclick="decrementar(10)">Decrementar en 10</button>
+            </p>
+            <canvas id="canvas" class="canvas" v-on:mousemove="actualizarXY"></canvas>
+            Coordenadas: {{ x }}, {{ y }}.
+            <p><a v-on:click.prevent="click" href="Ejemplo4.html">Ejemplo #4</a></p>
+        </div>
+        <script src="js/main5.js" type="text/javascript"></script>
+    </body>
+</html>
